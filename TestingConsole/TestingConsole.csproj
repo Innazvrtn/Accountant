@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A51F1008-69A5-4F87-8D0B-6B395B8316AC}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Core</RootNamespace>
-    <AssemblyName>Core</AssemblyName>
+    <ProjectGuid>{AD63942A-A5A2-4C59-BA61-06C2C7646FF2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TestingConsole</RootNamespace>
+    <AssemblyName>TestingConsole</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -56,51 +58,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configs\Config.cs" />
-    <Compile Include="Configs\Configs.cs" />
-    <Compile Include="DB\DBManager.cs" />
-    <Compile Include="Encription\Decryptor.cs" />
-    <Compile Include="Encription\EncriptionClass.cs" />
-    <Compile Include="Encription\Encryptor.cs" />
-    <Compile Include="Entities\Action.cs" />
-    <Compile Include="Entities\ActionCategory.cs" />
-    <Compile Include="Entities\ActionType.cs" />
-    <Compile Include="Entities\Contact.cs" />
-    <Compile Include="Entities\ContactType.cs" />
-    <Compile Include="Entities\Controls\ActionControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Entities\Controls\ActionControl.Designer.cs">
-      <DependentUpon>ActionControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Group.cs" />
-    <Compile Include="Entities\GroupPermission.cs" />
-    <Compile Include="Entities\MainDataSource.cs" />
-    <Compile Include="Entities\SummarySource.cs" />
-    <Compile Include="Entities\User.cs" />
-    <Compile Include="Helpers\Constants.cs" />
-    <Compile Include="Helpers\Enums.cs" />
-    <Compile Include="ProjectStrings\Strings.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\ActionCategoryRepository.cs" />
-    <Compile Include="Repository\ActionRepository.cs" />
-    <Compile Include="Repository\ActionTypeRepository.cs" />
-    <Compile Include="Repository\ContactRepository.cs" />
-    <Compile Include="Repository\ContactTypeRepository.cs" />
-    <Compile Include="Repository\GroupPermissionRepository.cs" />
-    <Compile Include="Repository\GroupRepository.cs" />
-    <Compile Include="Repository\IRepository.cs" />
-    <Compile Include="Repository\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Core.Entities.ActionCategory.datasource" />
-    <None Include="Properties\DataSources\Core.Entities.ActionType.datasource" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Entities\Controls\ActionControl.resx">
-      <DependentUpon>ActionControl.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{a51f1008-69a5-4f87-8d0b-6b395b8316ac}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
